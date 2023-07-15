@@ -1,0 +1,80 @@
+<div class="product-list">
+    <h1>Product List</h1>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>description</th>
+            <th>Image</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productList">
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.color}}</td>
+                <td>{{item.description}}</td>
+                <td><img src="{{item.url}}"></td>
+                <td><button (click)="deleteProduct(item)" class="btn btn-danger">Delete</button></td>
+                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" (click)="edit(item)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <h6 [routerLink]="['/add-product']">Go To Add a Product</h6>
+
+</div>
+<!-- <td><img src="{{item.url}}"</td> -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form #updateFrom="ngForm" (ngSubmit)="updatepro()">
+                <fieldset>
+                  <div class="form-group">
+                    <label for="id"><span class="req">* </span> Product ID:</label>
+                    <input required type="text" #id [(ngModel)]="producttoupdate.id" name="id" id="id"
+                      placeholder="Enter your Product ID..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="name"><span class="req">* </span> Product Name:</label>
+                    <input required type="text" #name [(ngModel)]="producttoupdate.name" name="name" id="name"
+                      placeholder="Enter your Product Name..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="price"><span class="req">* </span> Product price:</label>
+                    <input required type="text" #price [(ngModel)]="producttoupdate.price" name="price" id="price"
+                      placeholder="Enter your Product price..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="color"><span class="req">* </span> Product Color:</label>
+                    <input required type="text" #color [(ngModel)]="producttoupdate.color" name="color" id="color"
+                      placeholder="Enter your Product Color..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="description"><span class="req">* </span> Product Description:</label>
+                    <input required type="text" #description [(ngModel)]="producttoupdate.description" name="description" id="description"
+                      placeholder="Enter your Product Description..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="url"><span class="req">* </span> Product url:</label>
+                    <input required type="text" #url [(ngModel)]="producttoupdate.url" name="url" id="url"
+                      placeholder="Enter your Product url..." />
+                  </div>
+                  
+                  <div class="form-group">
+                    <input class="btn btn-success" type="submit" value="Update">
+                  </div>
+                </fieldset>
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

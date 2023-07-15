@@ -1,0 +1,23 @@
+table{
+    text-align: left;
+    color: black;
+    border-collapse: collapse;
+}
+table td, table th{
+    border: 1px solid black;
+    padding: 10px;
+    min-width: 160pxs;
+}
+img{
+    height: 100px;
+    width: 100px;
+}
+h6{
+    text-align: center;
+    color: green;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+    color: red;
+}

@@ -1,0 +1,29 @@
+<div class="seller">
+    <div *ngIf="inVisible; else nonsecret" class="signup">
+        <h1>Sign-up</h1>
+        <form  [formGroup]="mymodelform" (submit)="signUp(mymodelform.value)" class="common-form">
+            <input class="form-input" type="text" [(ngModel)]="login.username" id="username" name="username" placeholder="Enter your Name"
+            formControlName="username"/>
+            <input class="form-input" type="password" [(ngModel)]="login.password" id="password" name="password"  placeholder="Enter your password"
+            formControlName="password"/>
+            <input class="form-input" type="text" [(ngModel)]="login.email" id="email" name="email" placeholder="Enter your Email"
+            formControlName="email"/>
+            <input [disabled]="!mymodelform.valid" type="submit" class="btn btn-success">
+            <a class="toggle-link" (click)="openLogin()">Already Have Account? Click to Login</a>
+        </form>
+    </div>
+
+    <!-- login area -->
+    <div class="login"><ng-template #nonsecret>     
+        <h1 class="login">LOGIN</h1> 
+        <form #sellerSingUP="ngForm" (submit)="alert12()" class="common-form">
+            <input class="form-input" type="text"  [(ngModel)]="login.username" name="username" placeholder="Enter your username">
+            <input class="form-input" type="password" [(ngModel)]="login.password" name="password" placeholder="Enter your password">
+            <button class="form-button">Login</button>
+            <a class="toggle-link" (click)="openLogin()">IF You Donot Have Account? Click to Sign-up</a>
+        </form>
+    </ng-template>
+    </div>
+</div>
+<!-- <input type="text" [(ngModel)]="mydata">
+   <button (click)="printval()">clicked</button> -->

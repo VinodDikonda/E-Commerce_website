@@ -1,0 +1,32 @@
+.common-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+.form-input{
+    height: 35px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    padding-left: 15px;
+    color: black;
+}
+.form-button{
+    height: 35px;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+}
+.message-p{
+    padding-left: 15px;
+    color: green;
+}
+h6{
+    text-align: center;
+    color: green;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+    color: red;
+}

@@ -1,0 +1,42 @@
+<div class="cart-page"  *ngIf="productdata">
+    <h1>Cart Page</h1>
+    <div class="row">
+        <div class="col-sm-8">
+            <table>
+                <thead class="details">
+                    <th><span>Image</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Price</span></th>
+                    <th><span>Color</span></th>
+                    <th><span>Quanity</span></th>
+                </thead>
+                <tbody>
+                    <tr *ngIf="productdata" class="details">
+                        <td><span><img src="{{productdata.url}}"></span></td>
+                        <td><span>{{productdata.name}}</span></td>
+                        <td><span>{{productdata.price}}</span></td>
+                        <td><span>{{productdata.color}}</span></td>
+                        <td><span>{{data}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4 summary">
+            <h3>Summary</h3>
+            <ul>
+                <li><span>Amount</span><span>{{productdata.price}}</span></li>
+                <li><span>Quanity</span><span>{{data}}</span></li>
+                <li><span>Tax</span><span>10%</span></li>
+                <li><span>Delivery Fee</span><span>100</span></li>
+                <li><span>Total</span><span><h4>{{total}}</h4></span></li>
+            </ul>
+            <div *ngIf="inVisible; else nonsecret">
+            <button class="btn btn-primary" (click)="submitevent()" >Submit</button>
+        </div>
+        <div><ng-template #nonsecret>
+            <button class="btn btn-danger" (click)="cancleevent()" >Cancle</button>
+        </ng-template>
+        </div>
+        </div>
+    </div>
+</div>

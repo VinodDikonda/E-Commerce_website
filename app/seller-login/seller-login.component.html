@@ -1,0 +1,12 @@
+<h2 style="color: red; text-align: center;">Welcome Seller</h2>
+<div class="seller">
+    <!-- login area -->
+    <div class="login">   
+        <h1 class="login">LOGIN</h1> 
+        <form #sellerSingUP="ngForm" (submit)="alert12()" class="common-form">
+            <input class="form-input" type="text"  [(ngModel)]="login.username" name="username" placeholder="Enter your username">
+            <input class="form-input" type="password" [(ngModel)]="login.password" name="password" placeholder="Enter your password">
+            <button class="form-button" [routerLink]="['/add-product']">Login</button>
+        </form>
+    </div>
+</div>
