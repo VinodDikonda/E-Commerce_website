@@ -1,0 +1,11 @@
+package com.Example.main;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface loginRepo extends JpaRepository<LoginFrom, Integer>{
+
+	LoginFrom findByusername(String username);
+
+}
